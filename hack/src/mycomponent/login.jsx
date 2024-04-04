@@ -1,7 +1,9 @@
 import './login.css';
+import Header from './header';
 function LoginPage() {
     return (
-        <> <div className='h-screen w-screen '>
+        <><Header/> 
+        <div className='h-screen w-screen '>
 
             <form class="w-full max-w-lg m-10" >
                 <div class="flex flex-wrap -mx-3 mb-6">

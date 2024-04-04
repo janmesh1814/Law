@@ -1,6 +1,8 @@
-import logo from './logo.svg';
 import './App.css';
-import LoginPage from './login';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import LoginPage from './mycomponent/login';
+
+import Register from './mycomponent/register';
 function App() {
   return (
     <>
