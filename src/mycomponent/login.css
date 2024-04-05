@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.register-btn {
+    border: 2px solid black;
+    border-radius: 7px;
+    margin: 1rem 0 0 31rem;
+    background-color: black;
+    color: white;
+}

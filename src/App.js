@@ -5,7 +5,7 @@ import LoginPage from './mycomponent/login';
 function App() {
     return ( < >
         <
-        LoginPage / >
+        RegisterPage / >
         <
         />
     );

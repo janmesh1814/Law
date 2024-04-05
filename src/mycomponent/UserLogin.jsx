@@ -1,6 +1,6 @@
 import './login.css';
 import Header from './header';
-function LoginPage() {
+function RegisterPage() {
     return (
         <><Header />
             <div className='h-screen w-screen '>
@@ -70,4 +70,4 @@ function LoginPage() {
         </>
     );
 }
-export default LoginPage;
+export default RegisterPage;
