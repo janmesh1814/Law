@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import axios from "axios";
-
+import Prof from './Prof.css';
 export default function ProfRegister() {
   // initial state
   const [email, setEmail] = useState("");
