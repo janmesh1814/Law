@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import axios from "axios";
 
-export default function Register() {
+export default function ProfRegister() {
   // initial state
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
