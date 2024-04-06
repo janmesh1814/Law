@@ -1,10 +1,14 @@
 import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import axios from "axios";
-import Prof from './Prof.css';
+import './Prof.css';
 export default function ProfRegister() {
   // initial state
+  const [fname, setFname] = useState("");
+  const [lname, setLname] = useState("");
   const [email, setEmail] = useState("");
+  const [prof, setProf] = useState("");
+  const [role, setRole] = useState("");
   const [password, setPassword] = useState("");
   const [register, setRegister] = useState(false);
 
@@ -33,11 +37,43 @@ export default function ProfRegister() {
   };
 
   return (
-    <>
-      <h2>Register</h2>
-      <Form onSubmit={(e) => handleSubmit(e)}>
+
+    <div className="regsign-div">
+      <div className="heading">Register</div>
+      <Form className="reg-form" onSubmit={(e) => handleSubmit(e)}>
+
+        {/* Name */}
+        <Form.Group controlId="formBasicName" id="form-name">
+          <div className="form-inputs">
+            <div>
+              <Form.Label>First Name</Form.Label>
+              <Form.Control
+                id="name-ip"
+                type="text"
+                name="fname"
+                value={fname}
+                onChange={(e) => setFname(e.target.value)}
+                placeholder="Enter First name"
+              />
+            </div>
+
+            <div>
+              <Form.Label>Last Name</Form.Label>
+              <Form.Control
+                id="name-ip"
+                type="text"
+                name="lname"
+                value={lname}
+                onChange={(e) => setLname(e.target.value)}
+                placeholder="Enter Last name"
+              />
+            </div>
+          </div>
+        </Form.Group>
+
+
         {/* email */}
-        <Form.Group controlId="formBasicEmail">
+        <Form.Group controlId="formBasicEmail" id="form-email">
           <Form.Label>Email address</Form.Label>
           <Form.Control
             type="email"
@@ -48,8 +84,36 @@ export default function ProfRegister() {
           />
         </Form.Group>
 
+        <Form.Group controlId="formBasicProfession" id="form-prof">
+          <div className="form-inputs">
+            <div>
+              <Form.Label>Your Profession</Form.Label>&nbsp;&nbsp;&nbsp;
+              <Form.Control
+                id="name-ip"
+                type="text"
+                name="prof"
+                value={prof}
+                onChange={(e) => setProf(e.target.value)}
+                placeholder="Enter Your profession"
+              />
+            </div>
+
+            <div>
+              <Form.Label>Your Role</Form.Label>&nbsp;&nbsp;&nbsp;
+              <Form.Control
+                id="name-ip"
+                type="text"
+                name="role"
+                value={role}
+                onChange={(e) => setRole(e.target.value)}
+                placeholder="Enter Your role"
+              />
+            </div>
+          </div>
+        </Form.Group>
+
         {/* password */}
-        <Form.Group controlId="formBasicPassword">
+        <Form.Group controlId="formBasicPassword" id="form-password">
           <Form.Label>Password</Form.Label>
           <Form.Control
             type="password"
@@ -60,8 +124,10 @@ export default function ProfRegister() {
           />
         </Form.Group>
 
+
         {/* submit button */}
         <Button
+          id="subbtn"
           variant="primary"
           type="submit"
           onClick={(e) => handleSubmit(e)}
@@ -76,6 +142,6 @@ export default function ProfRegister() {
           <p className="text-danger">You Are Not Registered</p>
         )}
       </Form>
-    </>
+    </div>
   );
 }
