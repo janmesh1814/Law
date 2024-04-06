@@ -8,11 +8,11 @@ function Home() {
     <div className="flex items-center justify-center h-screen">
 
         <div className="text-center">
-        <Link to="/page1">
+        <Link to="/loginprof">
           <button className="mx-2 my-2 px-8 py-2 bg-blue-500 text-white rounded-md">Professional</button>
           </Link>
       <br/>
-      <Link to="/page2">
+      <Link to="/loginuser">
           <button className="mx-2 my-2 px-8 py-2 bg-blue-500 text-white rounded-md">User</button>
           </Link>
 

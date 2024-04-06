@@ -12,10 +12,10 @@ function App() {
 <BrowserRouter>
       <Routes>
         <Route exact path="/" element={<Home />}></Route>
-          <Route exact path="page1" element={<LoginUsr/>}></Route>
-          <Route exact path="page2" element={<LoginProf/>}></Route>
-          <Route exact path='page1/Signupusr' element={<Register/>}></Route>
-          <Route exact path='page2/Signupprof' element={<LoginPage/>}></Route>
+          <Route exact path="loginuser" element={<LoginUsr/>}></Route>
+          <Route exact path="loginprof" element={<LoginProf/>}></Route>
+          <Route exact path='loginuser/userregister' element={<Register/>}></Route>
+          <Route exact path='loginprof/profregister' element={<LoginPage/>}></Route>
       </Routes>
     </BrowserRouter>
     </>

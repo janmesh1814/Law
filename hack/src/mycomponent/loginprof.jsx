@@ -24,7 +24,7 @@ function LoginProf (){
             </div>
             <button type="submit" className="mt-4 px-4 py-2 bg-green-500 text-white rounded-md">Login</button>
           </form>
-          <Link to="Signupprof">new Signup!</Link>
+          <Link to="user">new Signup!</Link>
         </div>
       </div>
       </div>
