@@ -57,9 +57,9 @@ function App() {
         Routes >
         <
         Route exact path = "/"
-        element = { < Home / > } > < /Route> <
+        element = { < Home / > } > < /Route>  <
         Route exact path = "/loginuser"
-        element = { < LoginUsr / > } > < /Route> <
+        element = { < LoginUsr / > } > < /Route>  <
         Route exact path = "/loginprof"
         element = { < LoginProf / > } > < /Route> <
         Route exact path = 'loginprof/profregister'
