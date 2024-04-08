@@ -2,13 +2,14 @@ import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import Header from './header';
 import axios from "axios";
-import './Prof.css';
+import './Register.css';
 export default function ProfRegister() {
   // initial state
   const [fname, setFname] = useState("");
   const [lname, setLname] = useState("");
-  const [gender, setgender] = useState("");
+  const [gender, setGender] = useState("");
   const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
   const [prof, setProf] = useState("");
   const [role, setRole] = useState("");
   const [password, setPassword] = useState("");
@@ -41,12 +42,12 @@ export default function ProfRegister() {
   };
 
   const hadleGender = (gender) => {
-    setgender(gender);
+    setGender(gender);
   }
 
   return (
 
-    <>
+    <div className="prof-body">
       <Header />
       <div className="regsign-div">
         <div className="heading">Register</div>
@@ -121,6 +122,18 @@ export default function ProfRegister() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Enter email"
+            />
+          </Form.Group>
+
+          {/* Phone number */}
+          <Form.Group controlId="formBasicEmail" id="form-email">
+            <Form.Label>Phone</Form.Label>
+            <Form.Control
+              type="number"
+              name="phone"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              placeholder="Enter Phone No."
             />
           </Form.Group>
 
@@ -216,6 +229,6 @@ export default function ProfRegister() {
           )}
         </Form>
       </div>
-    </>
+    </div>
   );
 }

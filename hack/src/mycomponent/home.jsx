@@ -2,25 +2,25 @@ import { Link } from "react-router-dom";
 import Header from "./header";
 import React from 'react';
 function Home() {
-    return (<>
-    <Header/>
+  return (<>
+    <Header />
     <div className="bg-gray-600">
-    <div className="flex items-center justify-center h-screen">
+      <div className="flex items-center justify-center h-screen">
 
         <div className="text-center">
-        <Link to="/loginprof">
-          <button className="mx-2 my-2 px-8 py-2 bg-blue-500 text-white rounded-md">Professional</button>
+          <Link to="/loginprof">
+            <button className="mx-2 my-2 px-8 py-2 bg-blue-500 text-white rounded-md">Professional</button>
           </Link>
-      <br/>
-      <Link to="/loginuser">
-          <button className="mx-2 my-2 px-8 py-2 bg-blue-500 text-white rounded-md">User</button>
+          <br />
+          <Link to="/loginuser">
+            <button className="mx-2 my-2 px-8 py-2 bg-blue-500 text-white rounded-md">User</button>
           </Link>
 
         </div>
       </div>
-      </div>
+    </div>
 
-    </>
-    );
+  </>
+  );
 }
 export default Home;
