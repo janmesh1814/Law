@@ -12,6 +12,8 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 
 @Service
 public class AuthenticationService {
@@ -24,7 +26,10 @@ public class AuthenticationService {
     @Autowired
     JwtService jwtService;
     Logger logger = LoggerFactory.getLogger(AuthenticationResponse.class);
-    public AuthenticationResponse register(RegisterRequest registerRequest) {
+    public AuthenticationResponse register(RegisterRequest registerRequest) throws Exception {
+        if(!repo.findUserByEmail(registerRequest.getEmail()).equals(Optional.empty())){
+            throw new Exception("USER ALREADY EXISTS");
+        }
         var user = User.
                 builder().
                 FirstName(registerRequest.getFirstName())

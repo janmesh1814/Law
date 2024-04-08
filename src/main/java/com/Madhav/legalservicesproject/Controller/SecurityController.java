@@ -22,7 +22,7 @@ public class SecurityController {
     AuthenticationService service;
     Logger logger = LoggerFactory.getLogger(LoginRequest.class);
     @PostMapping("/register")
-    public ResponseEntity<AuthenticationResponse> register(@RequestBody RegisterRequest registerRequest){
+    public ResponseEntity<AuthenticationResponse> register(@RequestBody RegisterRequest registerRequest) throws Exception {
         return ResponseEntity.ok(service.register(registerRequest));
     }
     @PostMapping("/login")
