@@ -60,11 +60,16 @@
             <version>0.11.5</version>
         </dependency>
         <dependency>
-            <groupId>com.Madhav</groupId>
-            <artifactId>LegalServicesProject</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-
+     <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter</artifactId>
+    <version>3.2.4</version>
+    </dependency>
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-test</artifactId>
+    <version>3.2.4</version>
+    <scope>test</scope>
+</dependency>
     </dependencies>
 
     <build>

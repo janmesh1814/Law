@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("LegalServices")
 @RequiredArgsConstructor
+@CrossOrigin(origins = "http://localhost:3000")
 public class SecurityController {
     @Autowired
     AuthenticationService service;
