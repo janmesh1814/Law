@@ -1,7 +1,3 @@
-// import './login.css';
-// import './user.css';
-// import Header from './header';
-// import { useState } from 'react';
 import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import Header from './header';
@@ -19,10 +15,7 @@ function UserRegister() {
     const [register, setRegister] = useState(false);
 
     const handleSubmit = (e) => {
-        // prevent the form from refreshing the whole page
         e.preventDefault();
-
-        // set configurations
         const configuration = {
             method: "post",
             url: "https://nodejs-mongodb-auth-app.herokuapp.com/register",
@@ -31,8 +24,6 @@ function UserRegister() {
                 password,
             },
         };
-
-        // make the API call
         axios(configuration)
             .then((result) => {
                 setRegister(true);
@@ -45,9 +36,7 @@ function UserRegister() {
     const hadleGender = (gender) => {
         setGender(gender);
     }
-
     return (
-
         <div className="user-body">
             <Header />
             <div className="regsign-div">
@@ -66,10 +55,8 @@ function UserRegister() {
                                     value={fname}
                                     onChange={(e) => setFname(e.target.value)}
                                     placeholder="Enter First name"
-
                                 />
                             </div>
-
                             <div>
                                 <Form.Label >Last Name</Form.Label>
                                 <input
@@ -79,16 +66,12 @@ function UserRegister() {
                                     value={lname}
                                     onChange={(e) => setLname(e.target.value)}
                                     placeholder="Enter Last name"
-
                                 />
                             </div>
                         </div>
                     </Form.Group>
-
-                    {/* Gender */}
                     <Form.Group controlId="formBasicEmail" id="form-gender">
                         <Form.Label>Gender </Form.Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
                         <input
                             type="radio"
                             id="male"
@@ -137,38 +120,6 @@ function UserRegister() {
                             placeholder="Enter Phone No."
                         />
                     </Form.Group>
-
-                    {/* Profession details */}
-                    {/* <Form.Group controlId="formBasicProfession" id="form-prof">
-                        <div className="form-inputs">
-                            <div>
-                                <Form.Label>Your Profession</Form.Label>&nbsp;&nbsp;&nbsp;
-                                <input
-                                    id="name-ip"
-                                    type="text"
-                                    name="prof"
-                                    value={prof}
-                                    onChange={(e) => setProf(e.target.value)}
-                                    placeholder="Enter profession"
-                                />
-                            </div>
-
-                            <div>
-                                <Form.Label>Your Role</Form.Label>&nbsp;&nbsp;&nbsp;
-                                <input
-                                    id="name-ip"
-                                    type="text"
-                                    name="role"
-                                    value={role}
-                                    onChange={(e) => setRole(e.target.value)}
-                                    placeholder="Enter Your role"
-
-                                />
-                            </div>
-                        </div>
-                    </Form.Group> */}
-
-                    {/* City */}
                     <Form.Group controlId="formBasicProfession" id="form-city">
                         <div className="form-inputs">
                             <div>
