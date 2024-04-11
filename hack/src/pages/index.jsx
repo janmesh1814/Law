@@ -1,9 +1,8 @@
 import { Link } from "react-router-dom";
-import Header from "./header";
 import React from 'react';
-function Home() {
+function Index() {
   return (<>
-    <Header />
+    {/* <Header /> */}
     <div className="bg-gray-600">
       <div className="flex items-center justify-center h-screen">
 
@@ -23,4 +22,4 @@ function Home() {
   </>
   );
 }
-export default Home;
+export default Index;

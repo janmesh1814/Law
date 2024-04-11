@@ -1,5 +1,4 @@
 import React from 'react';
-import Header from './header';
 import { Link } from 'react-router-dom';
 import  { useState } from 'react';
 import axios from 'axios';
@@ -28,7 +27,7 @@ const handleSubmit = (event) => {
 };
     return (
 <>
-<Header/>
+{/* <Header/> */}
 <div className='flex-1 bg-gray-600'>
 
 <div className="flex items-center justify-center h-screen ">
@@ -48,7 +47,7 @@ const handleSubmit = (event) => {
             </div>
             <button type="submit" className="mt-4 px-4 py-2 bg-green-500 text-white rounded-md">Login</button>
           </form>
-          <Link to="userregister">new Signup!</Link>
+          <Link to="userregister" className='text-white'>new Signup!</Link>
         </div>
       </div>
       </div>

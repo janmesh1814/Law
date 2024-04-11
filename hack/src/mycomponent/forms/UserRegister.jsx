@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
-import Header from './header';
 import axios from "axios";
 import './Register.css';
 function UserRegister() {
@@ -38,7 +37,7 @@ function UserRegister() {
     }
     return (
         <div className="user-body">
-            <Header />
+            {/* <Header /> */}
             <div className="regsign-div">
                 <div className="heading">Register</div>
                 <Form className="reg-form" onSubmit={(e) => handleSubmit(e)}>

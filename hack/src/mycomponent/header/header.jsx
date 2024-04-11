@@ -12,24 +12,24 @@ const Header = () => {
 
   // Array containing navigation items
   const navItems = [
-    { id: 1, text: 'Home' },
-    { id: 2, text: 'Company' },
-    { id: 3, text: 'Resources' },
+    { id: 2, text: 'Services' },
+    { id: 3, text: 'News' },
     { id: 4, text: 'About' },
     { id: 5, text: 'Contact' },
+    { id:6, text:'Profile'}
   ];
 
   return (
-    <div className='bg-black w-full flex justify-between items-center h-24 text-white'>
+    <div className='bg-[#adc3dc] w-full flex justify-between items-center h-20 text-black font-bold'>
       {/* Logo */}
-      <h1 className='w-full text-3xl font-bold text-[#00df9a] text-center'>Law & Order.</h1>
+      <h1 className='w-full text-3xl font-bold text-black ml-4'>Law & Order</h1>
 
       {/* Desktop Navigation */}
-      <ul className='hidden md:flex justify-center flex-grow'>
+      <ul className='hidden md:flex  flex-grow'>
         {navItems.map(item => (
           <li
             key={item.id}
-            className='p-4 hover:bg-[#00df9a] rounded-xl m-2 cursor-pointer duration-300 hover:text-black'
+            className='p-4 hover:bg-[#00df9a] rounded-xl m-1 cursor-pointer duration-300 hover:text-black'
           >
             {item.text}
 

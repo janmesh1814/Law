@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
-import Header from './header';
+import Header from '../header/header';
 import axios from "axios";
 import './Register.css';
 export default function ProfRegister() {
