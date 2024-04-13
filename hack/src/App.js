@@ -8,7 +8,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LoginUsr from './mycomponent/forms/loginuser';
 import UserRegister from './mycomponent/forms/UserRegister';
 import Home from './pages/home';
-
+import ProfProfile from './pages/profprofile';
 function App() {
     return (< >
 
@@ -16,6 +16,7 @@ function App() {
             <Routes>
                 <Route exact path="/" element={< Index />} > </Route>
                 <Route exact path="/home" element={< Home />} > </Route>
+                <Route exact path="/home/profprofile" element={< ProfProfile/>} > </Route>
                 <Route exact path="/About" element={< About />} > </Route>
                 <Route exact path="/loginuser" element={<LoginUsr />} > </Route>
                 <Route exact path="/loginprof" element={< LoginProf />} > </Route>
