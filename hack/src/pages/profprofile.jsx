@@ -1,6 +1,20 @@
 import { Link } from "react-router-dom";
 import Header from "../mycomponent/header/header";
 import React from 'react';
+function fields(){
+
+}
+
+const a = [
+    "Mobile Number",
+    "Address",
+    "Postcode",
+    "State",
+    "City",
+    "Email ID",
+    "Education"
+
+]
 function ProfProfile() {
     return (<>
         <Header />
@@ -20,13 +34,9 @@ function ProfProfile() {
                             <div class="col-md-6"><label class="labels">Surname</label><input type="text" class="form-control" value="" placeholder="surname" /></div>
                         </div>
                         <div class="row mt-3">
-                            <div class="col-md-12"><label class="labels">Mobile Number</label><input type="text" class="form-control" placeholder="enter phone number" value="" /></div>
-                            <div class="col-md-12"><label class="labels">Address</label><input type="text" class="form-control" placeholder="enter address" value="" /></div>
-                            <div class="col-md-12"><label class="labels">Postcode</label><input type="text" class="form-control" placeholder="411041" value="" /></div>
-                            <div class="col-md-12"><label class="labels">State</label><input type="text" class="form-control" placeholder="Maharashtra" value="" /></div>
-                            <div class="col-md-12"><label class="labels">Area</label><input type="text" class="form-control" placeholder="Vadgaon" value="" /></div>
-                            <div class="col-md-12"><label class="labels">Email ID</label><input type="text" class="form-control" placeholder="Enter email id" value="" /></div>
-                            <div class="col-md-12"><label class="labels">Education</label><input type="text" class="form-control" placeholder="Education" value="" /></div>
+                        {a.map((e)=>
+                            <div class="col-md-12"><label class="labels">{e}</label><input type="text" class="form-control" placeholder={e} value="" /></div> 
+                        )}
                         </div>
                         <div class="row mt-3">
                             <div class="col-md-6"><label class="labels">Country</label><input type="text" class="form-control" placeholder="country" value="" /></div>

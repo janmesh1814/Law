@@ -20,12 +20,11 @@ const Header = () => {
   ];
 
   return (
-    <div className='bg-[#adc3dc] w-full flex justify-between items-center h-20 text-black font-bold'>
+    <div className='bg-cyan-600 w-full flex justify-between items-center h-[75px] text-black font-bold'>
       {/* Logo */}
       <h1 className='w-full text-3xl font-bold text-black ml-4'>Law & Order</h1>
-
       {/* Desktop Navigation */}
-      <ul className='hidden md:flex  flex-grow'>
+      <ul className='flex mt-2 h-full'>
         {navItems.map(item => (
           <li
             key={item.id}
