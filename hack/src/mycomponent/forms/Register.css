@@ -41,7 +41,12 @@
     }
 }
 
-#name-ip {
+#fname-ip,
+#lname-ip,
+#prof-ip,
+#role-ip,
+#city-ip,
+#pincode-ip {
     width: 100%;
     padding: .375rem .75rem;
     font-size: 1rem;

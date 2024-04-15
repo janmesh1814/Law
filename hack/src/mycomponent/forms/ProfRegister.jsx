@@ -59,7 +59,7 @@ export default function ProfRegister() {
               <div>
                 <Form.Label >First Name</Form.Label>
                 <input
-                  id="name-ip"
+                  id="fname-ip"
                   type="text"
                   name="fname"
                   value={fname}
@@ -72,7 +72,7 @@ export default function ProfRegister() {
               <div>
                 <Form.Label >Last Name</Form.Label>
                 <input
-                  id="name-ip"
+                  id="lname-ip"
                   type="text"
                   name="lname"
                   value={lname}
@@ -126,7 +126,7 @@ export default function ProfRegister() {
           </Form.Group>
 
           {/* Phone number */}
-          <Form.Group controlId="formBasicEmail" id="form-email">
+          <Form.Group controlId="formBasicPhone" id="form-email">
             <Form.Label>Phone</Form.Label>
             <Form.Control
               type="number"
@@ -143,7 +143,7 @@ export default function ProfRegister() {
               <div>
                 <Form.Label>Your Profession</Form.Label>&nbsp;&nbsp;&nbsp;
                 <input
-                  id="name-ip"
+                  id="prof-ip"
                   type="text"
                   name="prof"
                   value={prof}
@@ -155,7 +155,7 @@ export default function ProfRegister() {
               <div>
                 <Form.Label>Your Role</Form.Label>&nbsp;&nbsp;&nbsp;
                 <input
-                  id="name-ip"
+                  id="role-ip"
                   type="text"
                   name="role"
                   value={role}
@@ -173,7 +173,7 @@ export default function ProfRegister() {
               <div>
                 <Form.Label>City</Form.Label>&nbsp;&nbsp;&nbsp;
                 <input
-                  id="name-ip"
+                  id="city-ip"
                   type="text"
                   name="city"
                   value={city}
@@ -185,7 +185,7 @@ export default function ProfRegister() {
               <div>
                 <Form.Label>PinCode</Form.Label>&nbsp;&nbsp;&nbsp;
                 <input
-                  id="name-ip"
+                  id="pincode-ip"
                   type="number"
                   name="pin"
                   value={pin}
