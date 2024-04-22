@@ -19,25 +19,18 @@ export default function ProfRegister() {
   const handleSubmit = (e) => {
     // prevent the form from refreshing the whole page
     e.preventDefault();
-
+    console.log(fname,lname,gender,email,prof,role,password,city,pin,register);
     // set configurations
-    const configuration = {
-      method: "post",
-      url: "https://nodejs-mongodb-auth-app.herokuapp.com/register",
-      data: {
-        email,
-        password,
-      },
-    };
+   
 
     // make the API call
-    axios(configuration)
-      .then((result) => {
-        setRegister(true);
-      })
-      .catch((error) => {
-        error = new Error();
-      });
+    // axios(configuration)
+    //   .then((result) => {
+    //     setRegister(true);
+    //   })
+    //   .catch((error) => {
+    //     error = new Error();
+    //   });
   };
 
   const hadleGender = (gender) => {
@@ -208,12 +201,7 @@ export default function ProfRegister() {
             Register
           </Button>
 
-          {/* display success message */}
-          {register ? (
-            <p className="text-success">You Are Registered Successfully</p>
-          ) : (
-            <p className="text-danger">You Are Not Registered</p>
-          )}
+         
         </Form>
       </div>
     </>

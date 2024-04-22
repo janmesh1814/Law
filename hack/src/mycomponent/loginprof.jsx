@@ -15,7 +15,7 @@ const handlePasswordChange = (event) => {
 const handleSubmit = (event) => {
   // Prevent default form submission
   event.preventDefault();
-  axios.post('https://localhost8000/post-endpoint', {password: password,email: email,}, {headers: {'Content-Type': 'application/json',},})
+  axios.post('https://localhost8080/login', {password: password,email: email,}, {headers: {'Content-Type': 'application/json',},})
   .then(response => {console.log('Response:', response.data);
   })
   .catch(error => {console.error('Error:', error);
