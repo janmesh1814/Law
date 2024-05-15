@@ -1,5 +1,6 @@
 import './login.css';
 import Header from './header';
+import axios from 'axios';
 import { useState } from 'react';
 function UserRegister() {
     const [fname, setFname] = useState("");
@@ -9,8 +10,19 @@ function UserRegister() {
   const [city, setCity] = useState("");
   const [state,setState]=useState("");
   const [pin, setPin] = useState("");
-  function handleSubmit(e){
-    console.log("done");
+  async function handleSubmit(e){
+    e.preventDefault();
+    const res=await axios.post("http://localhost:8080/LegalServices/register",
+    {
+      "FirstName": fname  ,
+      "LastName": lname,
+      "email": email,
+      "password": password,
+      "PhoneNo": 1222222222,
+      "City": city,
+  }
+)
+    console.log("done",res);
   }
     return (
         <><Header />

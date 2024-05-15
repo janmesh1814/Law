@@ -16,7 +16,7 @@ export default function ProfRegister() {
   const [pin, setPin] = useState("");
   const [register, setRegister] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     // prevent the form from refreshing the whole page
     e.preventDefault();
     console.log(fname,lname,gender,email,prof,role,password,city,pin,register);
@@ -24,13 +24,25 @@ export default function ProfRegister() {
    
 
     // make the API call
-    // axios(configuration)
-    //   .then((result) => {
-    //     setRegister(true);
-    //   })
-    //   .catch((error) => {
-    //     error = new Error();
-    //   });
+    const res=await axios.post("http://localhost:8080/LegalServices/register",
+      {
+        "FirstName": fname  ,
+        "LastName": lname,
+        "email": email,
+        "password": password,
+        "PhoneNo": 1222222222,
+        "Gender": gender,
+        "City": city,
+        "Profession": prof,
+        "Role": role
+    }
+   
+    
+    )
+    if(res.status===200)
+      setRegister(true)
+    console.log(res);
+     
   };
 
   const hadleGender = (gender) => {
