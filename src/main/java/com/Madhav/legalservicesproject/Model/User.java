@@ -9,9 +9,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.Collection;
 import java.util.List;
 
-
-@Getter
-@Setter
 @Data
 @NoArgsConstructor
 @Builder
@@ -61,5 +58,73 @@ public class User implements UserDetails {
     @Override
     public String getPassword(){
         return this.password;
+    }
+
+    public String getFirstName() {
+        return FirstName;
+    }
+
+    public void setFirstName(String firstName) {
+        FirstName = firstName;
+    }
+
+    public String getLastName() {
+        return LastName;
+    }
+
+    public void setLastName(String lastName) {
+        LastName = lastName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public Integer getPhoneNo() {
+        return PhoneNo;
+    }
+
+    public void setPhoneNo(Integer phoneNo) {
+        PhoneNo = phoneNo;
+    }
+
+    public String getGender() {
+        return Gender;
+    }
+
+    public void setGender(String gender) {
+        Gender = gender;
+    }
+
+    public String getCity() {
+        return City;
+    }
+
+    public void setCity(String city) {
+        City = city;
+    }
+
+    public String getProfession() {
+        return Profession;
+    }
+
+    public void setProfession(String profession) {
+        Profession = profession;
+    }
+
+    public Roles getRole() {
+        return Role;
+    }
+
+    public void setRole(Roles role) {
+        Role = role;
     }
 }

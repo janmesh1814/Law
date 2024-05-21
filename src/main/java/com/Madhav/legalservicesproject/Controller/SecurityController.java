@@ -1,6 +1,5 @@
 package com.Madhav.legalservicesproject.Controller;
 
-import com.Madhav.legalservicesproject.Model.User;
 import com.Madhav.legalservicesproject.Security.auth.AuthenticationResponse;
 import com.Madhav.legalservicesproject.Security.auth.AuthenticationService;
 import com.Madhav.legalservicesproject.Security.auth.LoginRequest;
