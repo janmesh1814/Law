@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Header from '../mycomponent/header';
 import { Link } from 'react-router-dom';
 import  { useState } from 'react';
 import axios from 'axios';
@@ -15,20 +15,19 @@ const handlePasswordChange = (event) => {
 const handleSubmit = (event) => {
   // Prevent default form submission
   event.preventDefault();
-  axios.post('https://localhost8000/post-endpoint', {password: password,email: email,}, {headers: {'Content-Type': 'application/json',
-  },
-})
+  axios.post('https://localhost8000/post-endpoint', {password: password,email: email,}, {headers: {'Content-Type': 'application/json',},})
   .then(response => {console.log('Response:', response.data);
   })
   .catch(error => {console.error('Error:', error);
   });
+  
   console.log('password:', password);
   console.log('Email:', email);
 };
   return (
     
     <>
-      {/* <Header /> */}
+      <Header />
       <div className='flex-1 bg-gray-600'>
 
         <div className="flex items-center justify-center h-screen ">
@@ -48,7 +47,7 @@ const handleSubmit = (event) => {
               </div>
               <button type="submit" className="mt-4 px-4 py-2 bg-green-500 text-white rounded-md">Login</button>
             </form>
-            <Link to="profregister" className='text-white'>new Signup!</Link>
+            <Link to="profregister">new Signup!</Link>
           </div>
         </div>
       </div>
