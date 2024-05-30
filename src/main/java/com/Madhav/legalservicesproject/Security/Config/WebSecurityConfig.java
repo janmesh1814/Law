@@ -24,10 +24,13 @@ public class WebSecurityConfig {
     private static final String[] WHITE_LIST = {
             //Homepage,
             "LegalServices/register",
-            "LegalServices/login"
+            "LegalServices/login",
+            "chatWithServiceProvider",
+            "startChatting",
+            "chat_with_lawyers_for_free"
             //Login,
             //Register,
-            //About,
+            //About,    
             //Frontend files
     };
     @Bean
