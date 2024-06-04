@@ -11,7 +11,7 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-
+import org.springframework.security.core.userdetails.UserDetails;
 
 @Service
 public class AuthenticationService {
@@ -56,4 +56,5 @@ public class AuthenticationService {
         var jwt_token = jwtService.generateToken(user);
         return AuthenticationResponse.builder().token(jwt_token).build();
     }
+
 }

@@ -1,6 +1,8 @@
 package com.Madhav.legalservicesproject.Model;
 
 import lombok.*;
+import nonapi.io.github.classgraph.json.Id;
+
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -20,6 +22,7 @@ import java.util.List;
 public class User implements UserDetails {
     private String FirstName;
     private String LastName;
+    @Id
     private String email;
     private String password;
     private Integer PhoneNo;

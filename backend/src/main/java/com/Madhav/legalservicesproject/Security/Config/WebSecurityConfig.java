@@ -22,26 +22,19 @@ public class WebSecurityConfig {
     @Autowired
     private AuthenticationProvider authenticationProvider;
     private static final String[] WHITE_LIST = {
-            //Homepage,
-            "LegalServices/register",
-            "LegalServices/login"
-            //Login,
-            //Register,
-            //About,
-            //Frontend files
+            "/LegalServices/register",
+            "/LegalServices/login",
+            "/LegalServices/handle"
+            // Add other whitelisted URLs here
     };
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http)throws Exception{
-        http.csrf()
-                .disable()
+        http.csrf(csrf->csrf.disable())
                 .authorizeRequests()
-                .requestMatchers(WHITE_LIST)
-                .permitAll()
-                .anyRequest()
-                .authenticated()
+                .requestMatchers(WHITE_LIST).permitAll()
+                .anyRequest().authenticated()
                 .and()
-                .sessionManagement()
-                .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .authenticationProvider(authenticationProvider)
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);

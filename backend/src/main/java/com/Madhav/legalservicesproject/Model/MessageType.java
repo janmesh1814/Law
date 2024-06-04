@@ -1,4 +1,7 @@
 package com.Madhav.legalservicesproject.Model;
 
-public class Message {
+public enum MessageType {
+    CHAT,
+    JOIN,
+    LEAVE
 }
