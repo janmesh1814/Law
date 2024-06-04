@@ -17,6 +17,7 @@ const handleSubmit = (event) => {
   event.preventDefault();
   axios.post('https://localhost8080/login', {password: password,email: email,}, {headers: {'Content-Type': 'application/json',},})
   .then(response => {console.log('Response:', response.data);
+  
   })
   .catch(error => {console.error('Error:', error);
   });
@@ -47,7 +48,7 @@ const handleSubmit = (event) => {
               </div>
               <button type="submit" className="mt-4 px-4 py-2 bg-green-500 text-white rounded-md">Login</button>
             </form>
-            <Link to="profregister">new Signup!</Link>
+
           </div>
         </div>
       </div>

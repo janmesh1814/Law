@@ -1,7 +1,30 @@
 import React, { useState } from 'react';
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
-
+import { Link,NavLink } from 'react-router-dom';
 const Header = () => {
+  function logOut(){
+    localStorage.removeItem('dateNow');
+    localStorage.removeItem('jwtToken');
+  }
+  function loginCheck(){
+    let stored=localStorage.getItem('jwtToken');
+  let date=localStorage.getItem('dateNow');
+  if(stored){
+    const storedTime = new Date(date).getTime();
+  const currentTime = new Date().getTime();
+  const differenceInHours = (currentTime - storedTime) / (1000 * 60 * 60);
+  if(differenceInHours>8)
+    {
+      localStorage.removeItem('dateNow');
+      localStorage.removeItem('jwtToken');
+      return 0;
+    }
+    else{
+      return 1;
+    }
+  }
+  return 0;
+}
   // State to manage the navbar's visibility
   const [nav, setNav] = useState(false);
 
@@ -12,11 +35,13 @@ const Header = () => {
 
   // Array containing navigation items
   const navItems = [
-    { id: 1, text: 'Home' },
-    { id: 2, text: 'Company' },
-    { id: 3, text: 'Resources' },
-    { id: 4, text: 'About' },
-    { id: 5, text: 'Contact' },
+    { id: 1, text: 'Home',link:'/' },
+    { id: 2, text: 'Profile',link:'/law' },
+    { id: 3, text: 'News',link:'/news' },
+    {id: 4,text:'InfoBot', link:'/info'},
+    {id :5 ,text:'Chat',link:'/chat'},
+    { id: 6, text: 'About',link:'/about' },
+    { id: 7, text: loginCheck()===1?'Logout':'Login',link: loginCheck()===1?'/logout':'/login' },
   ];
 
   return (
@@ -27,13 +52,13 @@ const Header = () => {
       {/* Desktop Navigation */}
       <ul className='hidden md:flex justify-center flex-grow'>
         {navItems.map(item => (
-          <li
-            key={item.id}
-            className='p-4 hover:bg-[#00df9a] rounded-xl m-2 cursor-pointer duration-300 hover:text-black'
-          >
-            {item.text}
+            <NavLink exact  to= {item.link} >
+          <li key={item.id}className='p-4 hover:bg-[#00df9a] rounded-xl m-2 cursor-pointer duration-300 hover:text-black'>
+
+        {item.text} 
 
           </li>
+          </NavLink>
         ))}
       </ul>
 
@@ -55,12 +80,15 @@ const Header = () => {
 
         {/* Mobile Navigation Items */}
         {navItems.map(item => (
+         
           <li
             key={item.id}
+            
             className='p-4 border-b rounded-xl hover:bg-[#00df9a] duration-300 hover:text-black cursor-pointer border-gray-600'
           >
-            {item.text}
+          <Link  to="/about">  {item.text}</Link>
           </li>
+          
         ))}
       </ul>
     </div>
