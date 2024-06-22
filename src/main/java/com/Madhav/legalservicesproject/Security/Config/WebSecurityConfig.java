@@ -29,7 +29,7 @@ public class WebSecurityConfig {
             "LegalServices/login",
             "chatWithServiceProvider",
             "startChatting",
-            "chat_with_lawyers_for_free",
+            "chat_with_lawyers",
             "LegalServices/findLawyers/**",
             "LegalServices/payment/**",
             "payment/create",

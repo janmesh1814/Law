@@ -10,6 +10,8 @@ import com.Madhav.legalservicesproject.Repo.ChatroomRepository;
 import com.Madhav.legalservicesproject.Repo.MessageRepository;
 import com.Madhav.legalservicesproject.Repo.ProjectRepository;
 import com.sun.jdi.InternalException;
+import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.simp.SimpMessageHeaderAccessor;
@@ -19,6 +21,7 @@ import org.springframework.stereotype.Controller;
 import java.util.Optional;
 
 @Controller
+@Slf4j
 public class ChatController{
     @Autowired
     WebSocketEventListener auth;
