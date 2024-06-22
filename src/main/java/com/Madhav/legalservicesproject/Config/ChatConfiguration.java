@@ -1,7 +1,5 @@
-package com.Madhav.legalservicesproject.ChatConfig;
+package com.Madhav.legalservicesproject.Config;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.messaging.simp.config.MessageBrokerRegistry;
 import org.springframework.web.socket.config.annotation.EnableWebSocketMessageBroker;
@@ -11,16 +9,17 @@ import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerCo
 @Configuration
 @EnableWebSocketMessageBroker
 public class ChatConfiguration implements WebSocketMessageBrokerConfigurer {
-    Logger logger = LoggerFactory.getLogger(ChatConfiguration.class);
     @Override
     public void configureMessageBroker(MessageBrokerRegistry registry){
-        logger.info("Configuring message broker");
-        registry.enableSimpleBroker("/topic");
-        registry.setApplicationDestinationPrefixes("/app");
+        registry.enableSimpleBroker("/user");
+        registry    .setApplicationDestinationPrefixes("/app");
+        registry.setUserDestinationPrefix("/user"); //user specific destinations    
     }
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
-        logger.info("Entry point");
-        registry.addEndpoint("/chat_with_lawyers_for_free");
+        registry.addEndpoint("chat_with_lawyers")
+                .setAllowedOrigins("http://localhost:3000")
+                .setAllowedOrigins("http://localhost:8080")
+                .withSockJS();
     }
 }

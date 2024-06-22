@@ -1,6 +1,7 @@
 package com.Madhav.legalservicesproject.Security.Config;
 
 import com.Madhav.legalservicesproject.Security.JWT.JwtAuthenticationFilter;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -16,6 +17,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @Configuration
 @EnableWebSecurity
 @EnableMethodSecurity
+@Slf4j
 public class WebSecurityConfig {
     @Autowired
     private JwtAuthenticationFilter jwtAuthFilter;
@@ -27,7 +29,13 @@ public class WebSecurityConfig {
             "LegalServices/login",
             "chatWithServiceProvider",
             "startChatting",
-            "chat_with_lawyers_for_free"
+            "chat_with_lawyers_for_free",
+            "LegalServices/findLawyers/**",
+            "LegalServices/payment/**",
+            "payment/create",
+            "/css/**",   // Add your static resources paths here
+            "/js/**",
+            "/images/**"
             //Login,
             //Register,
             //About,    
@@ -35,6 +43,7 @@ public class WebSecurityConfig {
     };
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http)throws Exception{
+        log.info("Inside sec filter chain");
         http.csrf()
                 .disable()
                 .authorizeRequests()

@@ -26,7 +26,6 @@ public class User implements UserDetails {
     private String City;
     private String Profession;
     private Roles Role;
-
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return List.of(new SimpleGrantedAuthority(Role.name()));

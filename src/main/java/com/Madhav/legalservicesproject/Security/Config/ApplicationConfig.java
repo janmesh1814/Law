@@ -1,6 +1,8 @@
 package com.Madhav.legalservicesproject.Security.Config;
 
 import com.Madhav.legalservicesproject.Repo.ProjectRepository;
+import com.Madhav.legalservicesproject.Repo.SearchRepoImplementation;
+import com.Madhav.legalservicesproject.Repo.SearchRepository;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -50,5 +52,9 @@ public class ApplicationConfig {
     @Bean
     public static PasswordEncoder passwordEncoder(){
         return new BCryptPasswordEncoder();
+    }
+    @Bean
+    public SearchRepository searchRepository(){
+        return new SearchRepoImplementation();
     }
 }
