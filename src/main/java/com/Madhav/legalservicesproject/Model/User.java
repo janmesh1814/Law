@@ -1,6 +1,7 @@
 package com.Madhav.legalservicesproject.Model;
 
 import lombok.*;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -13,10 +14,11 @@ import java.util.List;
 @NoArgsConstructor
 @Builder
 @AllArgsConstructor
-@Document("User")
+@Document(collection = "User")
 public class User implements UserDetails {
     private String FirstName;
     private String LastName;
+    @Id
     private String email;
     private String password;
     private Integer PhoneNo;
@@ -24,7 +26,6 @@ public class User implements UserDetails {
     private String City;
     private String Profession;
     private Roles Role;
-
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return List.of(new SimpleGrantedAuthority(Role.name()));
