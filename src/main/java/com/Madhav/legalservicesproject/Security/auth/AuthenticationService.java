@@ -11,7 +11,6 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-<<<<<<< HEAD:src/main/java/com/Madhav/legalservicesproject/Security/auth/AuthenticationService.java
 
 import java.util.Optional;
 
